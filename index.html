@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Platsdumonde</title>
+    <!-- Logo -->
+    <link rel="shortcut icon" href="logo.ico">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1><img src="logo.png" alt="logo" title="Samosa" height="60"/> PlatsDuMonde</h1>
+        <p class="lead">&#x1F372; Photo aléatoire des plats du monde. &#x1F35B;</p>
+        <div class="row align-items-center">
+            <div class="col">
+
+                <img id="img" src="burger10.jpg" alt="foodish"/>
+
+            </div>
+            <button id="btn">Miam Miam</button>
+            <div class="col">
+
+                <ul>
+
+
+                    <li>biryani</a> : 81</li>
+
+
+
+                    <li>burger</a> : 87</li>
+
+
+
+                    <li>butter-chicken</a> : 22</li>
+
+
+
+                    <li>dessert</a> : 36</li>
+
+
+
+                    <li>dosa</a> : 83</li>
+
+
+
+                    <li>idly</a> : 77</li>
+
+
+
+                    <li>pasta</a> : 34</li>
+
+
+
+                    <li>pizza</a> : 95</li>
+
+
+
+                    <li>rice</a> : 35</li>
+
+
+
+                    <li>samosa</a> : 22</li>
+
+
+
+                    <li>Total Foodishes : 572</li>
+
+
+                </ul>
+
+
+                <span>Partager ce plat : </span>
+                <input type="text" class="form-control" value="https://foodish-api.com/images/samosa/samosa2.jpg"/>
+
+            </div>
+        </div>
+    </div>
+    <script>
+     document.querySelector('#btn').addEventListener('click', async () =>{
+    refreshFood()
+   })
+
+   async function refreshFood() {
+    try {
+     var fetchResult = await fetch('https://foodish-api.com/api/')
+     var data = await fetchResult.json()
+     if(data.image.includes('.mp4')){
+         refreshFood()
+         return
+     }
+     let target = document.querySelector('#img')
+    target.src = data.image
+    } catch (error) {
+        console.log(error)
+    }
+     
+   }
+    </script>
+    <footer class="footer">
+        <p class="lead">Designed  by : vinny barry &copy; 2020 - 2024
+        </p>
+        <!-- Build date : 10th October 2020 -->
+    </footer>
+    </div>
+</body>
+
+</html>

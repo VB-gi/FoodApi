@@ -1,0 +1,26 @@
+img {
+    max-height: 70vh;
+  }
+  h1,
+  li,
+  span {
+    font-family: 'Lobster', cursive;
+  }
+  .footer {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+  }
+  button{
+    background-color: #ccc;
+    color: #000;
+    border: #000 1px solid;
+    box-shadow: 5px 8px #ccc;
+    height: 40px;
+    padding: 8px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 5px;
+  }
